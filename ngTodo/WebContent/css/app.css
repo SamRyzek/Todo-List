@@ -1,0 +1,22 @@
+.number{
+	padding-right: 10px;
+	padding-left: 10px;
+	border-radius: 10px;
+}
+
+.red{
+	color : red;
+}
+
+.yellow{
+	color : orange;
+}
+
+.green{
+	color : green;
+}
+
+.strikethrough {
+	color : #939393;
+	text-decoration : line-through;
+}

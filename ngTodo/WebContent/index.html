@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="appModule">
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-route.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-cookies.min.js"></script>
+
+<script src="app/appModule/app.module.js"></script>
+<script src="app/authModule/auth.module.js"></script>
+
+<script src="app/appModule/todo.service.js"></script>
+<script src="app/authModule/auth.service.js"></script>
+
+<script src="app/appModule/incomplete.filter.js"></script>
+
+<script src="app/appModule/todoList.component.js"></script>
+<script src="app/appModule/contact.component.js"></script>
+<script src="app/appModule/home.component.js"></script>
+<script src="app/authModule/login.component.js"></script>
+<script src="app/authModule/register.component.js"></script>
+<script src="app/authModule/logout.component.js"></script>
+<script src="app/appModule/about.component.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/app.css" />
+<title>Angular</title>
+</head>
+	<body>
+		<nav>
+			<a href = "#/">Home</a>
+			<a href = "#/about">About</a>
+			<a href = "#/contact">Contact</a>
+			<a href = "#/todo">Todos</a>
+		</nav>
+		<nav>
+			<register></register>
+			<login></login>
+			<logout></logout>
+		</nav>
+		<ng-view></ng-view>
+	</body>
+</html>

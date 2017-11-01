@@ -1,0 +1,35 @@
+<h1 >NgTodo <span ng-class="vm.warnUser()" class="badge">{{vm.incompleteTodos()}}</span></h1>
+
+
+<form ng-hide="vm.selected">
+  <input type="text" placeholder="Task" ng-model="task.task"/>
+  <input ng-click="vm.addItem(task); task={};" type="submit" value="Add" />
+</form>
+
+
+ <table ng-hide="vm.selected">
+   <tr>
+     <th>Task</th>
+     <th>Mark</th>
+     <th colspan="2">Completed</th>
+   </tr>
+   <tr ng-repeat="task in vm.todos | todoFilter:vm.showComplete" ng-class="task.completed ? 'strikethrough' : '';">
+     <td ng-click="vm.selected = task">{{task.task}}</td>
+     <td><input type="checkbox" ng-change="vm.complete(task)" ng-model="task.completed"/></td>
+     <td>{{task.completed}}</td>
+     <td><input ng-click="vm.delete(task)" type="submit" value="X" /></td>
+	 <label>Show Complete?</label><input type ="checkbox" ng-model="vm.showComplete" />
+   </tr>
+</table>
+
+<div ng-show ="vm.selected && !vm.editTodo">
+	<form>
+		Task: <input type="text" value="{{vm.selected.task}}" ng-model="vm.selected.task"/><br>
+		Description: <input type="text" value="{{vm.selected.description}}" ng-model="vm.selected.description"/><br>
+		Completed: <input type="checkbox" ng-change="vm.complete(task)" ng-model="vm.selected.completed"/><br>
+		<input ng-click="vm.displayTable()" type="submit" value="Cancel"/>
+		<input ng-click="vm.updateTodo(vm.selected)" type="submit" value="Save"/><br>
+		
+	</form>
+</div>
+
